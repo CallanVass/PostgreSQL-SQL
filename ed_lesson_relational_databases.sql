@@ -44,3 +44,9 @@ DROP COLUMN column_name;
 ALTER TABLE table_name 
 RENAME COLUMN column_name 
 TO new_column_name;
+
+-- Insert in column 
+INSERT INTO table_name(attr1, attr2, etc.) VALUES (attr1_value, attr2_value, etc.);
+
+-- Alternate insert (without table & attributes mentioned)
+-- INSERT INTO DEPARTMENTS VALUES (11, 'Marketing');
