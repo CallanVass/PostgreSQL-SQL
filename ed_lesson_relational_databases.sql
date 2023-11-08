@@ -50,3 +50,35 @@ INSERT INTO table_name(attr1, attr2, etc.) VALUES (attr1_value, attr2_value, etc
 
 -- Alternate insert (without table & attributes mentioned)
 -- INSERT INTO DEPARTMENTS VALUES (11, 'Marketing');
+
+-- Select attribute with parameter (Name)
+SELECT *
+FROM PROJECTS
+WHERE proj_location = 'Melbourne';
+
+-- Select attribute with parameter (DOB)
+SELECT first_name, last_name, position, dob
+FROM EMPLOYEES 
+WHERE dob > '01/01/1995';
+
+-- Select attributes starting with or not with parameter
+dept_name LIKE ‘I%’ -> Must start with an I, but can then be anything.
+dept_name LIKE ‘S_____’ -> Must be 5 characters starting with an S.
+dept_name LIKE ‘%s’ -> Any sequence of characters ending with an s.
+dept_name NOT LIKE ‘A%’ -> This means the 1st character cannot be an A.
+
+-- Order attributes by certain order when called
+SELECT proj_name, proj_location FROM PROJECTS WHERE proj_location = 'Melbourne' ORDER BY proj_name;
+
+-- Order attributes by descending order when called
+SELECT * 
+FROM DEPARTMENTS 
+ORDER BY dept_id DESC;
+
+-- Delete
+DELETE FROM table_name WHERE condition(s)
+
+-- Update
+UPDATE table_name 
+SET attr_to_update = updated_value
+WHERE condition(s)
