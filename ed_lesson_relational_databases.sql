@@ -82,3 +82,24 @@ DELETE FROM table_name WHERE condition(s)
 UPDATE table_name 
 SET attr_to_update = updated_value
 WHERE condition(s)
+
+-- Select by date
+SELECT f_name, l_name
+FROM students
+WHERE EXTRACT(YEAR FROM dob)::int BETWEEN 1990 AND 1999;
+
+-- Count the rows in a table
+SELECT COUNT(*) FROM employees;
+
+-- SUM query
+SELECT SUM(hours) 
+FROM HOUR_ASSIGNMENTS 
+WHERE project_id = 14;
+
+-- MIN MAX AVG query
+SELECT SUM(hours), AVG(hours), MIN(hours), MAX(hours) 
+FROM HOUR_ASSIGNMENTS 
+WHERE project_id = 14;
+-- to add round use round(avg(hours), 2)
+
+
